@@ -11,7 +11,6 @@ app.use(express.urlencoded({ extended: true }))
 const mongoose = require("mongoose");
   mongoose
   .connect('mongodb+srv://FawziL:Zddx1v2hhlB7ux8f@agenda.2xefrlm.mongodb.net/', {
-    
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -22,10 +21,8 @@ const mongoose = require("mongoose");
     console.error('Error al conectar a la base de datos:', error.message);
   });
   
-  
 app.use('/', rutas)
 app.use(express.static('public'))
-
 
 const connectedServer = httpServer.listen(puerto, () => {
     console.log(`Servidor escuchando en el puerto: ${connectedServer.address().port}`)
